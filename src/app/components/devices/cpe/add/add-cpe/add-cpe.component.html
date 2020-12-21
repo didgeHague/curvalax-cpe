@@ -1,0 +1,19 @@
+<div mat-dialog-content>
+  <p>New CPE Details</p>
+
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="data.name">
+    <br/>
+
+    <mat-label>Latitude</mat-label>
+    <input matInput [(ngModel)]="data.latitude">
+    <br/>
+
+    <mat-label>Longitude</mat-label>
+    <input matInput [(ngModel)]="data.longitude">
+    <br/>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

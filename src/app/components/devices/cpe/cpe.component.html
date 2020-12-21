@@ -1,0 +1,63 @@
+<div>
+  <header>CPE's</header>
+
+</div>
+<mat-divider></mat-divider>
+<div>
+<mat-table [dataSource]="cpes" class="mat-elevation-z8">
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="frequency">
+    <mat-header-cell *matHeaderCellDef>Frequency</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.frequency}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="rx_power">
+    <mat-header-cell *matHeaderCellDef>RX power</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.rx_power}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="tx_power">
+    <mat-header-cell *matHeaderCellDef>TX power</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.tx_power}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="data_rate_1hr">
+    <mat-header-cell *matHeaderCellDef>Data Rate/1hr</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.data_rate_1hr}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="data_rate_24hr">
+    <mat-header-cell *matHeaderCellDef>Data Rate/24hr</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.data_rate_24hr}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="ip_address">
+    <mat-header-cell *matHeaderCellDef>IP Address</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.ip_address}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="software_version">
+    <mat-header-cell *matHeaderCellDef>Version</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.software_version}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="latitude">
+    <mat-header-cell *matHeaderCellDef>Latitude</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.latitude}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="longitude">
+    <mat-header-cell *matHeaderCellDef>Longitude</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.longitude}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+  <mat-row *matRowDef="let row; let even = even; columns: displayedColumns;"
+           [ngClass]="{gray: even}"></mat-row>
+</mat-table>
+<button mat-raised-button color="primary" (click)="addUser()"><mat-icon>add</mat-icon></button>
+</div>
